@@ -1,0 +1,9 @@
+DiscolorImage
+AutumnFilter
+OceanFilter
+JetFilter
+LuvFilter
+FullRGBHLSFilter
+BGR2XYZFilter
+Resize200
+Resize50

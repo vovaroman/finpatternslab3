@@ -50,17 +50,20 @@ class Observer:
             cv2.imwrite(name + '.jpg',self.object)
             return
     def ApplyFilterSettings(self, filterType):
-        if filterType._value_ == 1:
-            print('1')
+        with open('./basefilters.txt') as f:
+            content = f.readlines()
+        baseModeFilters = [x.strip() for x in content]
+        with open('./colorfilters.txt') as f:
+            content = f.readlines()
+        colorFilters = [x.strip() for x in content]
+        if filterType._name_ in colorFilters:
             self.ReOpenInColorMode()
-        elif filterType._value_ == 0:
-            print('2')
-
+        else:
             self.ReOpenInBaseMode()
-        
     def ApplyFilter(self, callMethod):
         self.ApplyFilterSettings(callMethod)
         try:
+            print(callMethod._name_)
             filters = ImageUserFilters()
             filters.setupImage(self.object)
             getattr(filters, callMethod._name_)()

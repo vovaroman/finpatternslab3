@@ -9,7 +9,7 @@ class ImageHelper:
         self.image = Image.open(self.pathToFile).convert('RGB')
         self.mode = Primitives().PIL
     def __openInColorMode(self):
-        self.image = cv2.imread(self.pathToFile)
+        self.image = cv2.imread(self.pathToFile,cv2.IMREAD_COLOR)
         self.mode = Primitives().CV2
     
     def __init__(self, path, mode):

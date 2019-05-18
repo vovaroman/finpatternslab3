@@ -1,0 +1,8 @@
+AddSharpness
+AddBlur
+AddSMOOTH
+DetailFilter
+CountourFilter
+GaussianBlur2Filter
+GaussianBlur5Filter
+GaussianBlur10Filter
